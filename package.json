@@ -1,0 +1,31 @@
+{
+    "name"            : "downer-size"
+  , "description"     : "A native LevelDOWN plugin providing a size() method"
+  , "version"         : "0.0.0"
+  , "homepage"        : "https://github.com/rvagg/node-downer-size"
+  , "authors"         : [
+        "Rod Vagg <rod@vagg.org> (https://github.com/rvagg)"
+    ]
+  , "keywords"        : [ "leveldown", "leveldb", "size" ]
+  , "main"            : "./index.js"
+  , "repository"      : {
+        "type"            : "git"
+      , "url"             : "https://github.com/rvagg/node-downer-size.git"
+    }
+  , "dependencies"    : {
+        "bindings"        : "~1.1.0"
+    }
+  , "devDependencies" : {
+        "leveldown"       : "~0.2.0-b02"
+      , "tap"             : "*"
+      , "rimraf"          : "*"
+    }
+  , "peerDependencies" : {
+        "leveldown"       : "~0.2.0-b02"
+    }
+  , "scripts": {
+        "test"            : "node ./test.js"
+    }
+  , "license"             : "MIT"
+  , "gypfile"             : true
+}
