@@ -50,10 +50,17 @@ void SizeWorker::Execute () {
   // these next lines are the actual range-delete operation
   std::string key; // nah, not actually used
   size = 0;
-  for (; iterator->IteratorNext(key, key); size++) {
-    if (size % 10000 == 0) std::cout << "size: " << size << std::endl;
-  }
+  for (; iterator->IteratorNext(key, key); size++);
   iterator->IteratorEnd();
+}
+
+void SizeWorker::HandleOKCallback () {
+  v8::Local<v8::Value> returnValue = v8::Number::New((int) size);
+  v8::Local<v8::Value> argv[] = {
+      v8::Local<v8::Value>::New(v8::Null())
+    , returnValue
+  };
+  LD_RUN_CALLBACK(callback, argv, 2);
 }
 
 /** The concrete implementation of the .rangeDel() method attached

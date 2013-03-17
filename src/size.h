@@ -24,6 +24,7 @@ public:
   );
   virtual ~SizeWorker ();
   virtual void Execute ();
+  virtual void HandleOKCallback ();
 
 private:
   leveldb::Slice* start;
